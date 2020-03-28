@@ -116,6 +116,7 @@ X = tf.matmul(tf.linalg.inv(A),B)
 ### Referencias
 
 - https://www.tensorflow.org/api_docs/python/tf_overview
+- https://www.tensorflow.org/guide/tensor
 - https://machinelearningmastery.com/introduction-python-deep-learning-library-tensorflow/
 - https://colab.research.google.com/drive/1F_EWVKa8rbMXi3_fG0w7AtcscFq7Hi7B#forceEdit=true&sandboxMode=true&scrollTo=JJjNMaSClWhg
 - https://www.toptal.com/machine-learning/tensorflow-python-tutorial
