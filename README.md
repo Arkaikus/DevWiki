@@ -120,3 +120,8 @@ X = tf.matmul(tf.linalg.inv(A),B)
 - https://machinelearningmastery.com/introduction-python-deep-learning-library-tensorflow/
 - https://colab.research.google.com/drive/1F_EWVKa8rbMXi3_fG0w7AtcscFq7Hi7B#forceEdit=true&sandboxMode=true&scrollTo=JJjNMaSClWhg
 - https://www.toptal.com/machine-learning/tensorflow-python-tutorial
+
+
+### Para Revisar
+- (Small Steps to TensorFlow r0.12)[https://dataplatform.cloud.ibm.com/exchange/public/entry/view/0cdd9df0783b706f0c4b7e5a3a613803]
+- [Use TensorFlow to predict hand-written digits](https://dataplatform.cloud.ibm.com/exchange/public/entry/view/b5eac6e919cd6fbcc5824de04a00ec65)
