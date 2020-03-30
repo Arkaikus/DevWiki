@@ -1,4 +1,4 @@
-# TensorFlow-Tutorial
+# Tutorial TensorFlow
 Ejercicios para aprender tensorflow con python
 
 ## Instalación
@@ -16,7 +16,7 @@ source ./venv/bin/activate
 # Ingresar a la url: http://localhost:8888/?token=XXXXXXXXXXXXXXXXXXXXX
 ```
 
-## Introducción
+## Introducción TensorFlow
 
 Desde un notebook incluir la libreria
 
@@ -113,14 +113,51 @@ Un sistema de ecuaciones también se podria resolver computando la inversa de A 
 X = tf.matmul(tf.linalg.inv(A),B)
 ```
 
+## Regresión Lineal con NumPy
+
+Es un modelo matematico para aproximar la dependencia lineal muchos valores Xi y su respectivo valor en Y, es decir, buscamos una ecuación lineal que relacione los puntos (Xi,F(Xi)) minimizando el error de aproximación para que la recta se ajuste lo más que se pueda de igual forma a los puntos dispersos y asi poder realizar predicciones futuras.
+
+Para realizar esto debemos hacer lo siguiente:
+- Calcular el error cuadrado por medio de minimos cuadrados
+- Generar la ecuación lineal con la pendiente y corte-y encontrados
+
+Ejemplo:
+
+numpy nos ofrece los siguientes metodos  
+> - **unique(arr):** recibe un arreglo de numeros y lo retorna ordenado en orden ascendente sin repreticiones  
+> - **polyfit(x,y,degree):** efectua el metodo de minimos cuadrados tomando x,y y un grado de polinomio (en nuestro caso 1) y retorna un arreglo de coeficientes  
+> - **poly1d(arr):** recibe un arreglo de coeficientes y retorna una ecuación lineal donde al menos uno de los coeficientes no se multiplica por la variable dependiente, es decir:  
+> > ```python
+> > np.poly1d([1])     # equivale a '1'
+> > np.poly1d([1,0])   # equivale a '1x + 0'
+> > np.poly1d([1,1])   # equivale a '1x + 1'
+> > np.poly1d([1,1,1]) # equivale a '1x + 1x + 1'
+> > ```  
+> > 
+Esto es conveniente dado que poly1d retorna la pendiente y corte-y de la forma que necesitamos
+
+Codigo de Ejemplo:
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = [1, 2, 2.5, 3, 4]
+y = [1, 4, 7, 9, 15]
+plt.plot(x, y, 'ro')
+plt.axis([0, 6, 0, 20])
+unique_x = np.unique(x)
+plt.plot(unique_x, np.poly1d(np.polyfit(x, y, 1))(unique_x))
+plt.show()
+```
+
 ### Referencias
 
-- https://www.tensorflow.org/api_docs/python/tf_overview
-- https://www.tensorflow.org/guide/tensor
-- https://machinelearningmastery.com/introduction-python-deep-learning-library-tensorflow/
-- https://colab.research.google.com/drive/1F_EWVKa8rbMXi3_fG0w7AtcscFq7Hi7B#forceEdit=true&sandboxMode=true&scrollTo=JJjNMaSClWhg
-- https://www.toptal.com/machine-learning/tensorflow-python-tutorial
-
+- [TensorFlow Overview](https://www.tensorflow.org/api_docs/python/tf_overview)
+- [TensorFlow Guide](https://www.tensorflow.org/guide)
+- [NumPy Doc](https://docs.scipy.org/doc/numpy/index.html)
+- [Introduction to the Python Deep Learning Library TensorFlow](https://machinelearningmastery.com/introduction-python-deep-learning-library-tensorflow/) (TensorFlow v1)
+- [From Solving Equations to Deep Learning: A TensorFlow Python Tutorial](https://www.toptal.com/machine-learning/tensorflow-python-tutorial) (TensorFlow v1)
+- [TensorFlow Linear with Estimators](https://github.com/tensorflow/docs/blob/master/site/en/tutorials/estimator/linear.ipynb)
 
 ### Para Revisar
 - [Small Steps to TensorFlow r0.12](https://dataplatform.cloud.ibm.com/exchange/public/entry/view/0cdd9df0783b706f0c4b7e5a3a613803)
