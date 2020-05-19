@@ -37,6 +37,10 @@ En este ejemplo se decide instalar el escritorio de xubuntu ya que ubuntu-deskto
 ![x1](wsld/x1.jpg)
 ![x2](wsld/x2.jpg)
 ![x3](wsld/x3.jpg)
+
+> **-swcursor** : toma el estilo del cursor de linux
+> **-keyhook**  : permite enviar combinaciones de teclado
+
 ![x4](wsld/x4.jpg)
 ![x5](wsld/x5.jpg)
 
