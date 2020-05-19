@@ -1,5 +1,7 @@
 # Windows Subsystem for Linux **Desktop**
 
+## Pasos
+
 1. Activar Modo de Programador, en Configuración-> Actualización y Seguridad-> Para Programadores  
 
 ![3](wsld/3.png)
@@ -48,3 +50,27 @@ ubuntu.exe run "if [ -z \"$(pidof startxfce4)\" ]; then export DISPLAY=127.0.0.1
 ```
 
 9. Ejecutar el archivo .bat, se debería abrir la consola, la ventana del servidor xorg y se debería cargar el manejador de ventanas
+
+![11](wsld/11.png)
+
+## Comentarios
+
+Se instaló el paquete xubuntu-desktop, este paquete viene con todas las aplicaciones por defecto por lo que puede pesar un poco
+
+Se puede instalar lxde, o xfc4 solamente, puede que cargue más rápido pero quedan cortos en ciertas funcionalidades, pero si se requiere lo básico no hay problema, solo es necesario cambiar el nombre del **ejecutable** en linux que despliegue el manejador de ventanas
+
+```bat
+ubuntu.exe run "if [ -z \"$(pidof **ejecutable**)\" ]; then export DISPLAY=127.0.0.1:0.0; export PULSE_SERVER=tcp:127.0.0.1; **ejecutable**; pkill '(gpg|ssh)-agent'; taskkill.exe /IM pulseaudio.exe /F; 
+```
+
+Puede haber problemas con la **ip del servidor** por lo que puede ser necesario configurarla a la que tenga asignada la máquina
+
+```bat
+ubuntu.exe run "if [ -z \"$(pidof startxfce4)\" ]; then export DISPLAY=**ip**:0.0; export PULSE_SERVER=tcp:**ip**; startxfce4; pkill '(gpg|ssh)-agent'; taskkill.exe /IM pulseaudio.exe /F; 
+```
+
+Se puede obviar el uso de pulseaudio, solo hay que retirar su presencia en los comandos
+
+Pueda que a veces no se abra bien el servidor de audio y toque cerrar y ejecutar de nuevo el archivo .bat
+
+Se puede crear un acceso directo y cambiar el icono para anclarlo al inicio o enviarlo al escritorio y que parezca un programa más
