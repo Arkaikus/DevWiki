@@ -18,7 +18,7 @@
 
 ![10](wsld/10.png)
 
-3.2. Si se instala ubuntu, windows queda el comando "ubuntu.exe" desde cmd, si se instala debian, queda el comando "debian.exe" desde cmd  
+3.2. Si se instala ubuntu, windows deja el comando "ubuntu.exe" desde cmd, si se instala debian, deja el comando "debian.exe" desde cmd  
 3.2. Ejecutar (o lxde, o xfc4 (revisar como instalarlos)):
 
 ```bash
@@ -32,7 +32,7 @@ En este ejemplo se decide instalar el escritorio de xubuntu ya que ubuntu-deskto
 
 4. Instalar [VcXsrv](https://sourceforge.net/projects/vcxsrv/) en windows, xming también sirve, ambos son servidores xorg  
 5. Crear una carpeta donde se prefiera para guardar los archivos de los pasos siguientes:  
-6. Crear archivo de configuración **config.xlaunch** del servidor xorg creado con VcXsrv  
+6. Crear archivo de configuración **config.xlaunch** del servidor xorg con VcXsrv  
 
 ![x1](wsld/x1.jpg)
 ![x2](wsld/x2.jpg)
